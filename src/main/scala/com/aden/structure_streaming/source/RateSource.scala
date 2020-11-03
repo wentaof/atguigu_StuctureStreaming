@@ -11,7 +11,7 @@ import org.apache.spark.sql.streaming.Trigger
  */
 object RateSource {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("KafkaSourceBatch").master("local[*]").getOrCreate()
+    val spark = SparkSession.builder().appName("KafkaSourceBatch").master("local[2]").getOrCreate()
 
     val srcdf = spark.readStream
       .format("rate")
